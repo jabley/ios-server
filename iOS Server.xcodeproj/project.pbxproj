@@ -25,6 +25,7 @@
 		F8B9E5A913A4156C0076F371 /* iOS_ServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B9E5A813A4156C0076F371 /* iOS_ServerTests.m */; };
 		F8B9E5CB13A419440076F371 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B9E5C913A419440076F371 /* AsyncSocket.m */; };
 		F8B9E5CD13A41AB50076F371 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B9E5CC13A41AB50076F371 /* CFNetwork.framework */; };
+		F8D4C55A13A4208E00F98A7C /* release.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D4C55813A4208E00F98A7C /* release.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		F8B9E5C913A419440076F371 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
 		F8B9E5CA13A419440076F371 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
 		F8B9E5CC13A41AB50076F371 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F8D4C55813A4208E00F98A7C /* release.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = release.m; sourceTree = "<group>"; };
+		F8D4C55913A4208E00F98A7C /* release.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = release.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 		F8B9E57A13A4156C0076F371 /* iOS Server */ = {
 			isa = PBXGroup;
 			children = (
+				F8D4C55813A4208E00F98A7C /* release.m */,
+				F8D4C55913A4208E00F98A7C /* release.h */,
 				F8B9E5C713A419270076F371 /* AsyncSocket */,
 				F8B9E58313A4156C0076F371 /* iOS_ServerAppDelegate.h */,
 				F8B9E58413A4156C0076F371 /* iOS_ServerAppDelegate.m */,
@@ -200,6 +205,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8B9E5AC13A4156C0076F371 /* Build configuration list for PBXNativeTarget "iOS Server" */;
 			buildPhases = (
+				F8D4C55613A4202600F98A7C /* ShellScript */,
 				F8B9E56C13A4156C0076F371 /* Sources */,
 				F8B9E56D13A4156C0076F371 /* Frameworks */,
 				F8B9E56E13A4156C0076F371 /* Resources */,
@@ -291,6 +297,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		F8D4C55613A4202600F98A7C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Ensure that git is on your PATH. Add values to this line if you see output with gitSHA1 = 00000000\nexport PATH=\"/usr/local/bin/:${PATH}\"\n\n# Get current values from version control\nGIT_SHA1=`(git show-ref --head --hash=8 2> /dev/null || echo 00000000) | head -n1`\nGIT_DIRTY=`git diff 2> /dev/null | wc -l`\n\n#echo $GIT_SHA1\n#echo $GIT_DIRTY\n\n# Create the file if it doesn't already exist\ntest -f \"iOS Server/release.m\" || touch \"iOS Server/release.m\"\n\n# Check whether we need to alter the existing file\n#(grep SHA1 Classes/release.m | grep $GIT_SHA1) && \\\n#(grep Dirty Classes/release.m | grep $GIT_DIRTY) && exit 0 # Already uptodate\n\n# Need to overwrite with new values\necho \"NSString *const gitSHA1 = @\\\"$GIT_SHA1\\\";\" > \"iOS Server/release.m\"\necho \"NSString *const gitDirty = @\\\"$GIT_DIRTY\\\";\" >> \"iOS Server/release.m\"\n\n# Touch something to get Xcode to recognise that the .m file has changed.\n# Not sure how to do the equivalent of Xcode Touch? It seems to be more than just \n# \n# touch file";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -303,6 +322,7 @@
 				F8B9E58913A4156C0076F371 /* iOS_ServerAppDelegate_iPhone.m in Sources */,
 				F8B9E59013A4156C0076F371 /* iOS_ServerAppDelegate_iPad.m in Sources */,
 				F8B9E5CB13A419440076F371 /* AsyncSocket.m in Sources */,
+				F8D4C55A13A4208E00F98A7C /* release.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
