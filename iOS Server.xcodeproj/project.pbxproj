@@ -28,6 +28,7 @@
 		F8B9E5CD13A41AB50076F371 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B9E5CC13A41AB50076F371 /* CFNetwork.framework */; };
 		F8D4C55A13A4208E00F98A7C /* release.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D4C55813A4208E00F98A7C /* release.m */; };
 		F8B9E5D013A41B190076F371 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B9E5CF13A41B190076F371 /* Preferences.m */; };
+		F8D4C55D13A4224600F98A7C /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D4C55B13A4224600F98A7C /* Server.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		F8D4C55913A4208E00F98A7C /* release.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = release.h; sourceTree = "<group>"; };
 		F8B9E5CE13A41B190076F371 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		F8B9E5CF13A41B190076F371 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
+		F8D4C55B13A4224600F98A7C /* Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Server.m; sourceTree = "<group>"; };
+		F8D4C55C13A4224600F98A7C /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 		F8B9E57A13A4156C0076F371 /* iOS Server */ = {
 			isa = PBXGroup;
 			children = (
+				F8D4C55B13A4224600F98A7C /* Server.m */,
+				F8D4C55C13A4224600F98A7C /* Server.h */,
 				F8D4C55813A4208E00F98A7C /* release.m */,
 				F8D4C55913A4208E00F98A7C /* release.h */,
 				F8B9E5C713A419270076F371 /* AsyncSocket */,
@@ -333,6 +338,7 @@
 				F8B9E5CB13A419440076F371 /* AsyncSocket.m in Sources */,
 				F8D4C55A13A4208E00F98A7C /* release.m in Sources */,
 				F8B9E5D013A41B190076F371 /* Preferences.m in Sources */,
+				F8D4C55D13A4224600F98A7C /* Server.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
