@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Server.h"
 
 @interface iOS_ServerAppDelegate : NSObject <UIApplicationDelegate> {
 
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+
+@property (nonatomic, retain) Server *server;
 
 @end

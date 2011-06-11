@@ -7,16 +7,38 @@
 //
 
 #import "iOS_ServerAppDelegate.h"
+#import "Preferences.h"
 
 @implementation iOS_ServerAppDelegate
 
 
 @synthesize window=_window;
 
+@synthesize server = _server;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
+    self.server = [[Server alloc] init];
+
+    NSInteger port = [[Preferences sharedInstance] serverPort];
+
+    if ([self.server startWithPort:port]) {
+        NSLog(@"Server started on port %d", port);
+    } else {
+        NSString *connectionMessage = [NSString stringWithFormat:
+                                       @"Failed to listen on port %d. Try another port in the application settings.", port];
+
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:connectionMessage
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+    }
+
     return YES;
 }
 
@@ -62,6 +84,7 @@
 - (void)dealloc
 {
     [_window release];
+    [_server release];
     [super dealloc];
 }
 
