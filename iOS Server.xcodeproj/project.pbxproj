@@ -23,6 +23,8 @@
 		F8B9E5A413A4156C0076F371 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B9E5A213A4156C0076F371 /* InfoPlist.strings */; };
 		F8B9E5A713A4156C0076F371 /* iOS_ServerTests.h in Resources */ = {isa = PBXBuildFile; fileRef = F8B9E5A613A4156C0076F371 /* iOS_ServerTests.h */; };
 		F8B9E5A913A4156C0076F371 /* iOS_ServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B9E5A813A4156C0076F371 /* iOS_ServerTests.m */; };
+		F8B9E5CB13A419440076F371 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B9E5C913A419440076F371 /* AsyncSocket.m */; };
+		F8B9E5CD13A41AB50076F371 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B9E5CC13A41AB50076F371 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,24 +42,27 @@
 		F8B9E57413A4156C0076F371 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8B9E57613A4156C0076F371 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F8B9E57813A4156C0076F371 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F8B9E57C13A4156C0076F371 /* iOS Server-Info.plist */ = {isa = PBXFileReference; path = "iOS Server-Info.plist"; sourceTree = "<group>"; };
+		F8B9E57C13A4156C0076F371 /* iOS Server-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS Server-Info.plist"; sourceTree = "<group>"; };
 		F8B9E57E13A4156C0076F371 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F8B9E58013A4156C0076F371 /* iOS Server-Prefix.pch */ = {isa = PBXFileReference; path = "iOS Server-Prefix.pch"; sourceTree = "<group>"; };
+		F8B9E58013A4156C0076F371 /* iOS Server-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS Server-Prefix.pch"; sourceTree = "<group>"; };
 		F8B9E58113A4156C0076F371 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F8B9E58313A4156C0076F371 /* iOS_ServerAppDelegate.h */ = {isa = PBXFileReference; path = iOS_ServerAppDelegate.h; sourceTree = "<group>"; };
+		F8B9E58313A4156C0076F371 /* iOS_ServerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_ServerAppDelegate.h; sourceTree = "<group>"; };
 		F8B9E58413A4156C0076F371 /* iOS_ServerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_ServerAppDelegate.m; sourceTree = "<group>"; };
-		F8B9E58713A4156C0076F371 /* iOS_ServerAppDelegate_iPhone.h */ = {isa = PBXFileReference; name = iOS_ServerAppDelegate_iPhone.h; path = iPhone/iOS_ServerAppDelegate_iPhone.h; sourceTree = "<group>"; };
+		F8B9E58713A4156C0076F371 /* iOS_ServerAppDelegate_iPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iOS_ServerAppDelegate_iPhone.h; path = iPhone/iOS_ServerAppDelegate_iPhone.h; sourceTree = "<group>"; };
 		F8B9E58813A4156C0076F371 /* iOS_ServerAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = iOS_ServerAppDelegate_iPhone.m; path = iPhone/iOS_ServerAppDelegate_iPhone.m; sourceTree = "<group>"; };
 		F8B9E58B13A4156C0076F371 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
-		F8B9E58E13A4156C0076F371 /* iOS_ServerAppDelegate_iPad.h */ = {isa = PBXFileReference; name = iOS_ServerAppDelegate_iPad.h; path = iPad/iOS_ServerAppDelegate_iPad.h; sourceTree = "<group>"; };
+		F8B9E58E13A4156C0076F371 /* iOS_ServerAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iOS_ServerAppDelegate_iPad.h; path = iPad/iOS_ServerAppDelegate_iPad.h; sourceTree = "<group>"; };
 		F8B9E58F13A4156C0076F371 /* iOS_ServerAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = iOS_ServerAppDelegate_iPad.m; path = iPad/iOS_ServerAppDelegate_iPad.m; sourceTree = "<group>"; };
 		F8B9E59213A4156C0076F371 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
 		F8B9E59913A4156C0076F371 /* iOS ServerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS ServerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8B9E5A113A4156C0076F371 /* iOS ServerTests-Info.plist */ = {isa = PBXFileReference; path = "iOS ServerTests-Info.plist"; sourceTree = "<group>"; };
+		F8B9E5A113A4156C0076F371 /* iOS ServerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS ServerTests-Info.plist"; sourceTree = "<group>"; };
 		F8B9E5A313A4156C0076F371 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F8B9E5A513A4156C0076F371 /* iOS ServerTests-Prefix.pch */ = {isa = PBXFileReference; path = "iOS ServerTests-Prefix.pch"; sourceTree = "<group>"; };
+		F8B9E5A513A4156C0076F371 /* iOS ServerTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS ServerTests-Prefix.pch"; sourceTree = "<group>"; };
 		F8B9E5A613A4156C0076F371 /* iOS_ServerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_ServerTests.h; sourceTree = "<group>"; };
 		F8B9E5A813A4156C0076F371 /* iOS_ServerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_ServerTests.m; sourceTree = "<group>"; };
+		F8B9E5C913A419440076F371 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		F8B9E5CA13A419440076F371 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		F8B9E5CC13A41AB50076F371 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B9E5CD13A41AB50076F371 /* CFNetwork.framework in Frameworks */,
 				F8B9E57513A4156C0076F371 /* UIKit.framework in Frameworks */,
 				F8B9E57713A4156C0076F371 /* Foundation.framework in Frameworks */,
 				F8B9E57913A4156C0076F371 /* CoreGraphics.framework in Frameworks */,
@@ -106,6 +112,7 @@
 		F8B9E57313A4156C0076F371 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8B9E5CC13A41AB50076F371 /* CFNetwork.framework */,
 				F8B9E57413A4156C0076F371 /* UIKit.framework */,
 				F8B9E57613A4156C0076F371 /* Foundation.framework */,
 				F8B9E57813A4156C0076F371 /* CoreGraphics.framework */,
@@ -116,6 +123,7 @@
 		F8B9E57A13A4156C0076F371 /* iOS Server */ = {
 			isa = PBXGroup;
 			children = (
+				F8B9E5C713A419270076F371 /* AsyncSocket */,
 				F8B9E58313A4156C0076F371 /* iOS_ServerAppDelegate.h */,
 				F8B9E58413A4156C0076F371 /* iOS_ServerAppDelegate.m */,
 				F8B9E58613A4156C0076F371 /* iPhone */,
@@ -174,6 +182,15 @@
 				F8B9E5A513A4156C0076F371 /* iOS ServerTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8B9E5C713A419270076F371 /* AsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				F8B9E5C913A419440076F371 /* AsyncSocket.m */,
+				F8B9E5CA13A419440076F371 /* AsyncSocket.h */,
+			);
+			name = AsyncSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +302,7 @@
 				F8B9E58513A4156C0076F371 /* iOS_ServerAppDelegate.m in Sources */,
 				F8B9E58913A4156C0076F371 /* iOS_ServerAppDelegate_iPhone.m in Sources */,
 				F8B9E59013A4156C0076F371 /* iOS_ServerAppDelegate_iPad.m in Sources */,
+				F8B9E5CB13A419440076F371 /* AsyncSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +485,7 @@
 				F8B9E5AE13A4156C0076F371 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8B9E5AF13A4156C0076F371 /* Build configuration list for PBXNativeTarget "iOS ServerTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +494,7 @@
 				F8B9E5B113A4156C0076F371 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
