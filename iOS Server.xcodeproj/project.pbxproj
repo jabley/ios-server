@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F86A294813A4257000336D2C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F86A294713A4257000336D2C /* Settings.bundle */; };
 		F8B9E57513A4156C0076F371 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B9E57413A4156C0076F371 /* UIKit.framework */; };
 		F8B9E57713A4156C0076F371 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B9E57613A4156C0076F371 /* Foundation.framework */; };
 		F8B9E57913A4156C0076F371 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B9E57813A4156C0076F371 /* CoreGraphics.framework */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F86A294713A4257000336D2C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		F8B9E57013A4156C0076F371 /* iOS Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B9E57413A4156C0076F371 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8B9E57613A4156C0076F371 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -139,6 +141,7 @@
 				F8B9E57B13A4156C0076F371 /* Supporting Files */,
 				F8B9E5CE13A41B190076F371 /* Preferences.h */,
 				F8B9E5CF13A41B190076F371 /* Preferences.m */,
+				F86A294713A4257000336D2C /* Settings.bundle */,
 			);
 			path = "iOS Server";
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				F8B9E57F13A4156C0076F371 /* InfoPlist.strings in Resources */,
 				F8B9E58C13A4156C0076F371 /* MainWindow_iPhone.xib in Resources */,
 				F8B9E59313A4156C0076F371 /* MainWindow_iPad.xib in Resources */,
+				F86A294813A4257000336D2C /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
