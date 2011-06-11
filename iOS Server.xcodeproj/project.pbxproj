@@ -26,6 +26,7 @@
 		F8B9E5CB13A419440076F371 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B9E5C913A419440076F371 /* AsyncSocket.m */; };
 		F8B9E5CD13A41AB50076F371 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B9E5CC13A41AB50076F371 /* CFNetwork.framework */; };
 		F8D4C55A13A4208E00F98A7C /* release.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D4C55813A4208E00F98A7C /* release.m */; };
+		F8B9E5D013A41B190076F371 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B9E5CF13A41B190076F371 /* Preferences.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		F8B9E5CC13A41AB50076F371 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F8D4C55813A4208E00F98A7C /* release.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = release.m; sourceTree = "<group>"; };
 		F8D4C55913A4208E00F98A7C /* release.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = release.h; sourceTree = "<group>"; };
+		F8B9E5CE13A41B190076F371 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		F8B9E5CF13A41B190076F371 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 				F8B9E58613A4156C0076F371 /* iPhone */,
 				F8B9E58D13A4156C0076F371 /* iPad */,
 				F8B9E57B13A4156C0076F371 /* Supporting Files */,
+				F8B9E5CE13A41B190076F371 /* Preferences.h */,
+				F8B9E5CF13A41B190076F371 /* Preferences.m */,
 			);
 			path = "iOS Server";
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				F8B9E59013A4156C0076F371 /* iOS_ServerAppDelegate_iPad.m in Sources */,
 				F8B9E5CB13A419440076F371 /* AsyncSocket.m in Sources */,
 				F8D4C55A13A4208E00F98A7C /* release.m in Sources */,
+				F8B9E5D013A41B190076F371 /* Preferences.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
